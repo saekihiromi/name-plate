@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+<body>
+    <div id="app">
+        <header>
+            <nav>
+                <ul>
+                    <li v-for="navigation in navigations">{{ navigation }}</li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1>Member</h1>
+
+        <div class="member-wrap">
+            <div class="card" v-for="member in members" :key="member.id">
+                <img :src="member.image" alt="" :style="{borderColor:member.color}">
+                <h2>{{ member.name }}</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
